@@ -46,25 +46,25 @@ namespace EF
         }
         static void Main(string[] args)
         {
-            //try
-            //{
-            //    using var context = new AppDbContext();
-            //    bool created = context.Database.EnsureCreated();
+            try
+            {
+                using var context = new AppDbContext();
+                bool created = context.Database.EnsureCreated();
 
-            //    if (created)
-            //    {
-            //        Console.WriteLine("✅ Database 'BookstoreDb' created successfully!");
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("ℹ️ Database already exists.");
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine("❌ Error connecting to database:");
-            //    Console.WriteLine(ex.Message);
-            //}
+                if (created)
+                {
+                    Console.WriteLine("✅ Database 'BookstoreDb' created successfully!");
+                }
+                else
+                {
+                    Console.WriteLine("ℹ️ Database already exists.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("❌ Error connecting to database:");
+                Console.WriteLine(ex.Message);
+            }
 
             AppDbContext _context = new AppDbContext();
         }
